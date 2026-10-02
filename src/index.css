@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: linear-gradient(180deg, #eaf3ff 0%, #edf6ff 24%, #f8fbff 100%);
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(96, 165, 250, 0.32), transparent 18%),
+      radial-gradient(circle at top right, rgba(147, 197, 253, 0.5), transparent 24%),
+      linear-gradient(180deg, #ebf4ff 0%, #edf5ff 28%, #f7faff 100%);
+    color: #372518;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .bg-cream-50 {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(219, 234, 254, 0.42)) !important;
+  }
+
+  .bg-cream-100 {
+    background: rgba(219, 234, 254, 0.3) !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #eaf1ff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #93c5fd, #60a5fa);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+/* Elegant link underlines */
+a {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
