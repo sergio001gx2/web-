@@ -29,13 +29,16 @@ export function Footer() {
                 <h3 className="font-serif text-2xl font-bold tracking-tight text-white">
                   {COMPANY.shortName}
                 </h3>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-300">
-                  {COMPANY.tagline}
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300">
+                  {COMPANY.motto}
                 </p>
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-blue-100/70">
-              Acompañamos cada despedida con el respeto, la calma y la dignidad que tu compañero merece. Servicios de cremación individual y memoriales en Quito.
+            <p className="text-xs italic text-blue-200/80 font-serif">
+              "{COMPANY.quote}"
+            </p>
+            <p className="text-xs leading-relaxed text-blue-100/70">
+              Acompañamos cada despedida con respeto y dignidad. Cremación individual con envío de video inicial y certificado entregado en ~48h en Quito.
             </p>
             <div className="flex items-center gap-2 text-xs text-blue-200/60 pt-1">
               <MapPin className="h-4 w-4 text-blue-400 shrink-0" />
@@ -83,8 +86,8 @@ export function Footer() {
                   <Phone className="h-5 w-5" />
                 </span>
                 <div>
-                  <div className="text-xs text-blue-200/60">Llámanos directamente</div>
-                  <div className="font-bold text-white text-base">{COMPANY.phone}</div>
+                  <div className="text-xs text-blue-200/60">Llámanos 24/7 en Quito</div>
+                  <div className="font-bold text-white text-sm sm:text-base">{COMPANY.phoneFormatted}</div>
                 </div>
               </a>
 

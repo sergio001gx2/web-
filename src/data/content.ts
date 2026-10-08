@@ -76,22 +76,22 @@ export const STEPS: Step[] = [
   {
     number: '01',
     title: 'Contacto y Retiro 24h',
-    description: 'Llámanos o escríbenos por WhatsApp. Recogemos a tu mascota directamente en tu hogar o veterinaria.',
+    description: 'Servicio disponible 24 horas. Llámanos o escríbenos por WhatsApp y recogemos a tu mascota directamente en tu hogar o veterinaria.',
   },
   {
     number: '02',
     title: 'Elección del Memorial',
-    description: 'Elige el modelo (Urna, Bonsái o Terrario) y personalízalo con fotos, frases o colores. Te enviaremos un presupuesto personalizado.',
+    description: 'Elige el modelo (Urna MDF, Bonsái o Terrario) y personalízalo. Procedemos con la elaboración del memorial seleccionado.',
   },
   {
     number: '03',
-    title: 'Cremación Certificada',
-    description: 'Al aprobar el presupuesto, iniciamos la cremación individual (enviamos un video inicial del proceso) con total transparencia.',
+    title: 'Cremación y Video',
+    description: 'Iniciamos el proceso de cremación individual y se envía un video inicial como garantía de transparencia.',
   },
   {
     number: '04',
-    title: 'Entrega del Recuerdo',
-    description: 'En aproximadamente 48 horas, recibirás las cenizas en el memorial elegido junto con su certificado.',
+    title: 'Entrega en 48 Horas',
+    description: 'En un período aproximado de 48 horas, recibirás las cenizas en el modelo elegido, junto con su certificado oficial.',
   },
 ];
 

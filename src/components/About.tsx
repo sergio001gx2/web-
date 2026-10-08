@@ -75,21 +75,33 @@ export function About() {
 
           {/* Content side */}
           <div>
-            <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-600/80">
-              Sobre Nosotros
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-600/80">
+                Sobre Nosotros
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-900 bg-blue-100/60 px-2.5 py-0.5 rounded-full">
+                {COMPANY.motto}
+              </span>
+            </div>
             <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.15] text-sand-800 sm:text-5xl text-balance">
               Acompañamos cada despedida con calma y respeto
             </h2>
             <p className="mt-6 text-[17px] leading-[1.75] text-sand-600">
               En {COMPANY.name} entendemos lo que significa perder a un compañero de vida.
-              Por eso el proceso es claro, humano y discreto: cremación, retiro a domicilio
-              y un recuerdo que honre su historia.
+              Por eso nuestro compromiso es total: cremación individual garantizada, servicio disponible 24 horas y memoriales dignos.
             </p>
+
+            <div className="mt-5 rounded-2xl bg-gradient-to-r from-blue-900/5 to-blue-600/5 border border-blue-200/50 p-4">
+              <p className="font-serif text-base italic leading-relaxed text-blue-950 font-medium">
+                "{COMPANY.quote}"
+              </p>
+              <div className="mt-2 text-xs font-semibold text-blue-800">
+                Atención y retiros a domicilio 24/7 en Quito y alrededores.
+              </div>
+            </div>
+
             <p className="mt-4 text-[15px] leading-[1.75] text-sand-500">
-              Trabajamos en Quito con la misma cercanía que verás en nuestras redes:
-              atención por WhatsApp, memoriales personalizados y un trato respetuoso
-              en cada paso.
+              Trabajamos con transparencia absoluta: enviamos video inicial del proceso de cremación individual y entregamos las cenizas junto con su certificado oficial en un plazo aproximado de 48 horas.
             </p>
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2">

@@ -1,4 +1,5 @@
 import { STEPS } from '@/data/content';
+import { COMPANY } from '@/data/company';
 import { useReveal } from '@/hooks/useReveal';
 
 export function Process() {
@@ -58,6 +59,15 @@ export function Process() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-14 rounded-2xl bg-white/[0.05] border border-white/[0.1] p-6 text-center max-w-3xl mx-auto backdrop-blur-sm shadow-inner">
+          <p className="font-serif italic text-xl font-medium text-white/95 tracking-wide">
+            "{COMPANY.motto}"
+          </p>
+          <p className="mt-2 text-xs font-semibold text-blue-200/70 uppercase tracking-widest">
+            {COMPANY.quote}
+          </p>
         </div>
       </div>
     </section>

@@ -33,10 +33,16 @@ export function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-blue-100 px-4 py-2 text-[11px] font-semibold tracking-widest uppercase text-blue-700/90 shadow-sm backdrop-blur-md">
-            <Heart className="h-3 w-3" fill="currentColor" />
-            Cremación de mascotas en Quito
-          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-blue-100 px-4 py-2 text-[11px] font-semibold tracking-widest uppercase text-blue-700/90 shadow-sm backdrop-blur-md">
+              <Heart className="h-3 w-3" fill="currentColor" />
+              Cremación de mascotas en Quito
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-700/10 border border-blue-200/60 px-3.5 py-1.5 text-[10px] font-bold tracking-wider uppercase text-blue-900 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+              Servicio 24 horas
+            </span>
+          </div>
 
           <h1 className="mt-8 font-serif text-[3.2rem] font-medium leading-[1.08] text-sand-900 sm:text-6xl lg:text-[4.5rem] text-balance">
             Cremación y memoriales
@@ -44,13 +50,23 @@ export function Hero() {
             <span className="bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent italic">realizado con respeto</span>
           </h1>
 
-          <p className="mt-7 max-w-lg text-[17px] leading-[1.75] text-sand-600">
-            En {COMPANY.name} acompañamos a cada familia con cremación individual,
-            retiro a domicilio y memoriales personalizados. Un proceso claro, cercano
-            y respetuoso cuando más lo necesitas.
+          <p className="mt-4 text-[13px] font-semibold tracking-wider uppercase text-blue-800/80">
+            {COMPANY.motto}
           </p>
 
-          <div className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+          <p className="mt-5 max-w-lg text-[17px] leading-[1.75] text-sand-600">
+            En {COMPANY.name} acompañamos a cada familia con cremación individual,
+            retiro a domicilio 24/7 y memoriales personalizados entregados en ~48 horas.
+          </p>
+
+          {/* Quote Card */}
+          <div className="mt-6 rounded-2xl bg-white/80 border border-blue-100/90 p-4 shadow-sm backdrop-blur-md">
+            <p className="font-serif italic text-sm leading-relaxed text-blue-950/80">
+              "{COMPANY.quote}"
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
             <a
               href={WHATSAPP_LINK}
               target="_blank"
@@ -69,25 +85,25 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-14 grid gap-3 sm:grid-cols-3">
+          <div className="mt-12 grid gap-3 sm:grid-cols-3">
             {[
-              { number: '24/7', label: 'Retiro a domicilio' },
+              { number: '24 Horas', label: 'Servicio disponible 24/7' },
               { number: '100%', label: 'Cremación individual' },
-              { number: 'Video', label: 'Certificado incluido' },
+              { number: '48 Horas', label: 'Video y certificado incluido' },
             ].map((stat) => (
               <div
                 key={stat.label}
                 className="rounded-2xl bg-white/50 border border-white/80 backdrop-blur-md p-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:bg-white/80 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
               >
-                <div className="font-serif text-2xl font-semibold text-blue-700/80">{stat.number}</div>
+                <div className="font-serif text-xl font-semibold text-blue-700/90">{stat.number}</div>
                 <div className="mt-0.5 text-xs text-sand-500">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 flex items-center gap-2 text-[11px] tracking-wide text-sand-400">
-            <ShieldCheck className="h-3.5 w-3.5 text-blue-500/60" />
-            Certificado de cremación · Video inicial del proceso
+          <div className="mt-6 flex items-center gap-2 text-[11px] tracking-wide text-sand-500">
+            <ShieldCheck className="h-3.5 w-3.5 text-blue-600" />
+            Cremación individual con video inicial · Certificado de cremación · Quito, Ecuador
           </div>
         </div>
 

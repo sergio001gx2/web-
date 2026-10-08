@@ -17,18 +17,33 @@ export function Contact() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           {/* Info side */}
           <div>
-            <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-600/80">
-              Contacto
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-600/80">
+                Contacto
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-900 bg-blue-100/70 px-2.5 py-0.5 rounded-full">
+                Servicio disponible 24 horas
+              </span>
+            </div>
+
             <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.15] text-sand-800 sm:text-5xl text-balance">
               Estamos aquí para acompañarte
             </h2>
-            <p className="mt-5 text-[17px] leading-[1.7] text-sand-500">
-              No tienes que pasar por esto solo. Escríbenos en cualquier momento y te
-              responderemos con una atención cercana, clara y respetuosa.
+
+            <div className="mt-4 rounded-2xl bg-gradient-to-r from-blue-900/5 to-blue-600/5 border border-blue-200/60 p-4 shadow-sm">
+              <p className="font-serif italic text-base leading-relaxed text-blue-950 font-medium">
+                "{COMPANY.quote}"
+              </p>
+              <div className="mt-2 text-xs font-bold uppercase tracking-widest text-blue-800/80">
+                {COMPANY.motto}
+              </div>
+            </div>
+
+            <p className="mt-5 text-[16px] leading-[1.7] text-sand-600">
+              No tienes que pasar por esto solo. Escríbenos o llámanos en cualquier momento del día. Atendemos emergencias 24/7 en Quito y alrededores.
             </p>
 
-            <div className="mt-10 space-y-4">
+            <div className="mt-8 space-y-4">
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
@@ -39,8 +54,8 @@ export function Contact() {
                   <WhatsAppIcon className="h-6 w-6" />
                 </span>
                 <div>
-                  <div className="font-semibold text-sand-800">WhatsApp</div>
-                  <div className="text-sm text-sand-400">{COMPANY.phone}</div>
+                  <div className="font-semibold text-sand-800">WhatsApp 24/7</div>
+                  <div className="text-sm text-sand-500 font-medium">{COMPANY.phoneFormatted}</div>
                 </div>
               </a>
 
@@ -52,8 +67,8 @@ export function Contact() {
                   <Phone className="h-6 w-6" />
                 </span>
                 <div>
-                  <div className="font-semibold text-sand-800">Teléfono</div>
-                  <div className="text-sm text-sand-400">{COMPANY.phone}</div>
+                  <div className="font-semibold text-sand-800">Llamadas de Emergencia</div>
+                  <div className="text-sm text-sand-500 font-medium">{COMPANY.phoneFormatted}</div>
                 </div>
               </a>
 
@@ -62,8 +77,8 @@ export function Contact() {
                   <MapPin className="h-6 w-6" />
                 </span>
                 <div>
-                  <div className="font-semibold text-sand-800">Ubicación</div>
-                  <div className="text-sm text-sand-400">{COMPANY.address} y alrededores</div>
+                  <div className="font-semibold text-sand-800">Ubicación & Cobertura</div>
+                  <div className="text-sm text-sand-500">{COMPANY.address} y valles aledaños</div>
                 </div>
               </div>
             </div>
