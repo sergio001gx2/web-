@@ -31,6 +31,11 @@ export function About() {
 
   return (
     <section id="nosotros" className="relative bg-cream-50 py-24 sm:py-32 overflow-hidden">
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-16 left-4 sm:left-8 md:left-12 w-64 sm:w-80 md:w-96 opacity-[0.13] select-none transform rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
+
       {/* Very soft background glow */}
       <div className="absolute top-20 -right-32 h-96 w-96 rounded-full bg-blue-50/40 blur-[100px] pointer-events-none" />
 

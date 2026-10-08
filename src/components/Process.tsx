@@ -12,6 +12,11 @@ export function Process() {
         background: 'linear-gradient(180deg, #1e3a6e 0%, #1a3264 50%, #152a54 100%)',
       }}
     >
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-12 left-4 sm:left-8 md:left-12 w-64 sm:w-80 md:w-96 opacity-[0.14] select-none transform rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
+
       {/* Soft glow accents */}
       <div className="absolute top-0 right-1/4 h-64 w-64 rounded-full bg-blue-400/10 blur-[80px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/3 h-48 w-48 rounded-full bg-blue-300/8 blur-[60px] pointer-events-none" />

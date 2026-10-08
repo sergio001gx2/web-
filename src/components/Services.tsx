@@ -22,6 +22,11 @@ export function Services() {
         background: 'linear-gradient(180deg, rgba(239,246,255,0.9) 0%, rgba(224,239,255,0.8) 50%, rgba(248,250,252,0.9) 100%)',
       }}
     >
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-16 right-4 sm:right-8 md:right-12 w-64 sm:w-80 md:w-96 opacity-[0.13] select-none transform -rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
+
       {/* Soft decorative blur */}
       <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-blue-50/30 blur-[80px] pointer-events-none" />
 

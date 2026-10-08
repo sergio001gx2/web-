@@ -43,6 +43,10 @@ export function Gallery() {
         background: 'linear-gradient(180deg, #FDFBF7 0%, #F4F0FA 50%, #FDFBF7 100%)',
       }}
     >
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-16 right-4 sm:right-8 md:right-12 w-64 sm:w-80 md:w-96 opacity-[0.13] select-none transform -rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
       {/* Decorative glow */}
       <div className="absolute bottom-20 right-0 h-80 w-80 rounded-full bg-blue-50/20 blur-[80px] pointer-events-none" />
 

@@ -21,6 +21,11 @@ export function Hero() {
         }}
       />
       
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-32 right-4 sm:right-10 md:right-16 w-64 sm:w-80 md:w-96 opacity-[0.13] select-none transform -rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
+
       {/* Ultra-soft ambient glow */}
       <div className="absolute top-0 right-0 h-[600px] w-[600px] rounded-full bg-blue-100/25 blur-[120px] pointer-events-none" />
       <div className="absolute top-40 -left-20 h-[500px] w-[500px] rounded-full bg-purple-50/30 blur-[100px] pointer-events-none" />

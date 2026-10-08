@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 import { TESTIMONIALS } from '@/data/content';
+import { COMPANY } from '@/data/company';
 
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
@@ -16,95 +17,112 @@ export function Testimonials() {
 
   return (
     <section id="testimonios" className="relative bg-cream-50 py-24 sm:py-32 overflow-hidden">
-      {/* Soft glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-blue-50/25 blur-[100px] pointer-events-none" />
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-16 right-4 sm:right-8 md:right-12 w-64 sm:w-80 md:w-96 opacity-[0.13] select-none transform -rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
 
-      <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
-        <div className="text-center">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-600/80">
-            Recuerdos
-          </span>
-          <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.15] text-sand-800 sm:text-5xl text-balance">
-            Un homenaje para cada historia
-          </h2>
-        </div>
-
-        <div className="relative mt-14">
-          {/* Decorative quote */}
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-50/60 text-blue-400/60">
-            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-            </svg>
+      <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
+        
+        {/* Header featuring Logo cleanly integrated */}
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="mb-4 inline-flex items-center gap-3 rounded-full bg-white/80 border border-sand-200/80 px-4 py-2 shadow-sm backdrop-blur-md">
+            <img src="/favicon.png" alt={COMPANY.name} className="h-7 w-7 object-contain" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700">
+              {COMPANY.shortName} · Recuerdos
+            </span>
           </div>
 
-          <div className="mt-6 overflow-hidden">
+          <h2 className="font-serif text-4xl font-medium leading-[1.15] text-sand-800 sm:text-5xl text-balance">
+            Un homenaje para cada historia
+          </h2>
+          <p className="mt-3 max-w-lg text-[16px] text-sand-500">
+            Experiencias reales de las familias que han confiado la despedida de su mascota a nuestro equipo.
+          </p>
+        </div>
+
+        {/* Testimonials Card */}
+        <div className="relative mt-12">
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] bg-white border border-sand-100/80 p-6 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.05)]">
             <div
               className="flex transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className="w-full shrink-0 px-4">
-                  <div className="mx-auto grid max-w-4xl gap-8 rounded-[1.5rem] bg-white border border-sand-100/80 p-5 text-left shadow-[0_4px_20px_rgba(0,0,0,0.04)] sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                    <div className="overflow-hidden rounded-[1.2rem]">
+                <div key={i} className="w-full shrink-0">
+                  <div className="grid gap-6 sm:grid-cols-[0.95fr_1.05fr] sm:items-center">
+                    <div className="overflow-hidden rounded-[1.2rem] bg-sand-100 h-64 sm:h-80">
                       <img
                         src={t.image}
                         alt={t.alt}
-                        className="h-72 w-full object-cover sm:h-80"
+                        className="h-full w-full object-cover"
                         loading="lazy"
                         referrerPolicy="no-referrer"
                       />
                     </div>
                     <div>
-                      <div className="flex items-center gap-2 text-blue-600/70">
-                        <Heart className="h-4 w-4" fill="currentColor" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.18em]">
+                      <div className="flex items-center gap-2 text-blue-600">
+                        <Heart className="h-4 w-4 fill-current" />
+                        <span className="text-[11px] font-bold uppercase tracking-wider">
                           {t.pet}
                         </span>
                       </div>
-                      <p className="mt-5 font-serif text-2xl font-medium leading-relaxed text-sand-700 sm:text-3xl text-balance">
+                      <h3 className="mt-3 font-serif text-2xl font-semibold text-sand-800 sm:text-3xl">
                         {t.name}
+                      </h3>
+                      <p className="mt-4 text-[15px] leading-relaxed text-sand-600">
+                        "{t.text}"
                       </p>
-                      <p className="mt-4 text-[15px] leading-[1.75] text-sand-500">{t.text}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
 
-          {count > 1 && (
-            <div className="mt-10 flex items-center justify-center gap-4">
-              <button
-                onClick={prev}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-sand-200/80 text-sand-400 transition-all duration-300 hover:bg-sand-50 hover:text-sand-600 hover:border-sand-300"
-                aria-label="Mensaje anterior"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
+            {count > 1 && (
+              <div className="mt-8 flex items-center justify-between border-t border-sand-100 pt-5">
+                <div className="flex items-center gap-2.5">
+                  <img src="/favicon.png" alt="" className="h-6 w-6 object-contain opacity-90" />
+                  <span className="text-xs font-semibold text-sand-500">
+                    Homenajes Amigo Eterno
+                  </span>
+                </div>
 
-              <div className="flex gap-1.5">
-                {TESTIMONIALS.map((_, i) => (
+                <div className="flex items-center gap-4">
                   <button
-                    key={i}
-                    onClick={() => setCurrent(i)}
-                    className={`rounded-full transition-all duration-500 ${
-                      i === current ? 'w-7 h-1.5 bg-blue-600/70' : 'w-1.5 h-1.5 bg-sand-200'
-                    }`}
-                    aria-label={`Ir al mensaje ${i + 1}`}
-                  />
-                ))}
-              </div>
+                    onClick={prev}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-sand-200 text-sand-500 transition-all hover:bg-sand-50 hover:text-blue-600 hover:border-blue-300"
+                    aria-label="Anterior"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
 
-              <button
-                onClick={next}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-sand-200/80 text-sand-400 transition-all duration-300 hover:bg-sand-50 hover:text-sand-600 hover:border-sand-300"
-                aria-label="Siguiente mensaje"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          )}
+                  <div className="flex gap-1.5">
+                    {TESTIMONIALS.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        className={`rounded-full transition-all duration-300 ${
+                          i === current ? 'w-7 h-1.5 bg-blue-600' : 'w-1.5 h-1.5 bg-sand-200'
+                        }`}
+                        aria-label={`Ir al testimonio ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={next}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-sand-200 text-sand-500 transition-all hover:bg-sand-50 hover:text-blue-600 hover:border-blue-300"
+                    aria-label="Siguiente"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
+
       </div>
     </section>
   );

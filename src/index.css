@@ -38,6 +38,11 @@
   .bg-cream-100 {
     background: rgba(219, 234, 254, 0.3) !important;
   }
+
+  /* Clean background helper */
+  .bg-logo-synergy {
+    position: relative;
+  }
 }
 
 @layer utilities {

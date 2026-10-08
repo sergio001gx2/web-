@@ -18,6 +18,11 @@ export function Catalog() {
 
   return (
     <section id="catalogo" className="relative py-24 sm:py-32 overflow-hidden bg-cream-50">
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-16 left-4 sm:left-8 md:left-12 w-64 sm:w-80 md:w-96 opacity-[0.13] select-none transform rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
+
       {/* Soft glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-72 w-[800px] rounded-full bg-blue-50/30 blur-[100px] pointer-events-none" />
 

@@ -5,6 +5,11 @@ import { COMPANY, WHATSAPP_LINK } from '@/data/company';
 export function Contact() {
   return (
     <section id="contacto" className="relative bg-cream-50 py-24 sm:py-32 overflow-hidden">
+      {/* Clean Unclipped Logo Background Watermark */}
+      <div className="pointer-events-none absolute top-16 left-4 sm:left-8 md:left-12 w-64 sm:w-80 md:w-96 opacity-[0.14] select-none transform rotate-6">
+        <img src="/favicon.png" alt="" className="w-full h-auto object-contain" />
+      </div>
+
       {/* Soft glow */}
       <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-blue-50/25 blur-[100px] pointer-events-none" />
 
